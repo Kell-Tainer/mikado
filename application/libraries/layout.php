@@ -24,6 +24,14 @@ class Layout
         //  Nous initialisons la variable $charset avec la même valeur que
         //  la clé de configuration initialisée dans le fichier config.php
         $this->var['charset'] = $this->CI->config->item('charset');
+        
+        // Création des tableaus qui vont permettrent de charger les css et les js
+        $this->var['css'] = array();
+        $this->var['js'] = array();
+        
+        // On récupère les fichiers CSS et Js necessaires partout.
+        $this->ajouter_css('bootstrap.min');
+        $this->ajouter_js('bootstrap.min');
     }   
      
 /*
@@ -74,8 +82,35 @@ class Layout
         }
         return false;
     }
-}
+    
+    
+    /*
+    |===============================================================================
+    | Méthodes pour ajouter des feuilles de CSS et de JavaScript
+    |   . ajouter_css
+    |   . ajouter_js
+    |===============================================================================
+    */
+    public function ajouter_css($nom)
+    {
+        if(is_string($nom) AND !empty($nom) AND file_exists('./assets/css/' . $nom . '.css'))
+        {
+            $this->var['css'][] = css_url($nom);
+            return true;
+        }
+        return false;
+    }
 
+    public function ajouter_js($nom)
+    {
+        if(is_string($nom) AND !empty($nom) AND file_exists('./assets/javascript/' . $nom . '.js'))
+        {
+            $this->var['js'][] = js_url($nom);
+            return true;
+        }
+        return false;
+    }
+}
 
  
 /* End of file layout.php */

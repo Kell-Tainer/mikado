@@ -23,6 +23,8 @@ class Club extends CI_Controller
         $data = array();
         $data['activites'] = $this->activite->liste_activite();
         $data['nb_activites'] = $this->activite->count();
-        $this->load->view('club', $data);
+        
+        $this->load->library('layout');
+        $this->layout->view('club', $data);
     }
 }

@@ -16,16 +16,18 @@ class Accueil extends CI_Controller
     
     public function index()
     {
-        $this->accueil();
+        $this->mAccueil();
     }
     
     public function mAccueil($pseudo = '')
     {
+        $this->load->library('layout');
         $data = array();
         $data['pseudo'] = !empty($pseudo)?$pseudo:'pas de pseudo';
         $data['email'] = 'email@ndd.fr';
         $data['en_ligne'] = true;
-        $this->load->view('accueil', $data);
+        
+        $this->layout->view('accueil', $data);
     }
  
     //  Cette page accepte une variable $_GET facultative
