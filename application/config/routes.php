@@ -38,18 +38,9 @@
 |
 */
 
-<<<<<<< HEAD
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
-=======
-$route['default_controller'] = "frontpage";
-$route['404_override'] = '';
-
-
-/* End of file routes.php */
-/* Location: ./application/config/routes.php */
->>>>>>> branch 'cdn' of https://github.com/sjlu/CodeIgniter-Bootstrap.git
