@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 /nbproject/private/
+=======
+.DS_Store
+.swp
+application/cache
+application/logs
+>>>>>>> branch 'cdn' of https://github.com/sjlu/CodeIgniter-Bootstrap.git
