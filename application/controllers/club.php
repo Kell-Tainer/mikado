@@ -8,7 +8,7 @@ class Club extends CI_Controller
         parent::__construct();
          
         //  Maintenant, ce code sera exécuté chaque fois que ce contrôleur sera appelé.
-        $this->titre_defaut = 'Mikado';
+        $this->titre_defaut = 'Mikado'; 
         
     }
     
